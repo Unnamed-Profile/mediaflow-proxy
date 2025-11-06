@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  mediaflow-proxy:
+    image: mhdzumair/mediaflow-proxy
+    ports:
+      - "8888:8888"
+    env_file:
+      - .env
+    restart: unless-stopped
