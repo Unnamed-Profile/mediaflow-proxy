@@ -9,8 +9,8 @@ ENV PORT="8888"
 WORKDIR /mediaflow_proxy
 
 # Create a non-root user
-RUN useradd -m mediaflow_proxy
-RUN chown -R mediaflow_proxy:mediaflow_proxy /mediaflow_proxy
+RUN useradd -m mediaflow_proxy && \
+    chown -R mediaflow_proxy:mediaflow_proxy /mediaflow_proxy
 
 # Set up the PATH to include the user's local bin
 ENV PATH="/home/mediaflow_proxy/.local/bin:$PATH"
